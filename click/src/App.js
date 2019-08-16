@@ -24,7 +24,7 @@ class App extends Component {
     friends,
     currentScore: 0,
     topScore: 0,
-    correctIncorrect: "",
+    guess: "",
     clicked: [],
   };
 
@@ -41,13 +41,10 @@ class App extends Component {
     const newScore = this.state.currentScore + 1;
     this.setState({
       currentScore: newScore,
-      correctIncorrect: "You guessed correctly!"
+      guess: "You guessed correctly!"
     });
     if (newScore >= this.state.topScore) {
       this.setState({ topScore: newScore });
-    }
-    else if (newScore === 12) {
-      this.setState({ correctIncorrect: "You win!" });
     }
     this.handleShuffle();
   };
@@ -56,7 +53,7 @@ class App extends Component {
     this.setState({
       currentScore: 0,
       topScore: this.state.topScore,
-      correctIncorrect: "You guessed incorrectly!",
+      guess: "You guessed incorrectly!",
       clicked: []
     });
     this.handleShuffle();
@@ -74,7 +71,7 @@ class App extends Component {
           title="My Hero Academia"
           score={this.state.currentScore}
           topScore={this.state.topScore}
-          correctIncorrect={this.state.correctIncorrect}
+          guess={this.state.guess}
         />
 
         <Title>
