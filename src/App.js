@@ -6,7 +6,7 @@ import Title from "./components/Title";
 import Container from "./Container";
 import Row from "./Row";
 import Column from "./Column";
-import friends from "./friends.json";
+import friends from "./friends.json.js";
 import "./App.css";
 
 // Random shuffle
